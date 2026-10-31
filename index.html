@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b1220">
+  <meta name="description" content="Tarix.uz — O‘zbekiston va jahon tarixini o‘rganish, tarixiy shaxslar va testlar.">
+  <title>Tarix.uz — O‘tmishdan saboq, kelajak uchun bilim</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#bosh-sahifa" aria-label="Tarix.uz bosh sahifa">
+      <span class="brand-mark" aria-hidden="true">🏛</span>
+      <span><strong>Tarix.uz</strong><small>O‘tmishdan saboq, kelajak uchun bilim</small></span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Menyuni ochish" aria-expanded="false">☰</button>
+    <nav class="main-nav" id="mainNav" aria-label="Asosiy menyu">
+      <a class="nav-link active" href="#bosh-sahifa">⌂ Bosh sahifa</a>
+      <a class="nav-link" href="#mavzular">▤ Mavzular</a>
+      <a class="nav-link" href="#testlar">◉ Testlar</a>
+      <a class="nav-link" href="#shaxslar">♙ Shaxslar</a>
+      <a class="nav-link" href="#biz-haqimizda">ⓘ Biz haqimizda</a>
+    </nav>
+    <div class="header-actions">
+      <form class="search-box" id="searchForm" role="search">
+        <span aria-hidden="true">⌕</span>
+        <input id="searchInput" type="search" placeholder="Qidiruv..." aria-label="Tarixdan qidirish">
+        <button type="submit" aria-label="Qidirish">→</button>
+      </form>
+      <button class="theme-toggle" id="themeToggle" aria-label="Rang rejimini almashtirish" title="Tungi/yorug‘ rejim">☾</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="bosh-sahifa">
+      <div class="hero-shade"></div>
+      <div class="hero-content">
+        <span class="eyebrow">★ Tarix — bu xalq xotirasi</span>
+        <h1>Tarixni o‘rganing —<br><em>kelajagingizni boyiting!</em></h1>
+        <p>O‘zbekiston va jahon tarixi, buyuk shaxslar, qadimiy sivilizatsiyalar hamda muhim voqealarni bir joyda kashf eting.</p>
+        <div class="hero-buttons">
+          <a class="button button-gold" href="#mavzular">▣ Boshlash <span>→</span></a>
+          <a class="button button-outline" href="#testlar">▷ Test ishlash</a>
+        </div>
+        <div class="hero-stats">
+          <div><strong>4+</strong><span>Tarixiy davr</span></div>
+          <div><strong>12+</strong><span>Mashhur shaxs</span></div>
+          <div><strong>3</strong><span>Test darajasi</span></div>
+        </div>
+      </div>
+      <div class="hero-note"><span>✦</span> O‘tmishni bilish — kelajakni anglash</div>
+    </section>
+
+    <section class="section" id="mavzular">
+      <div class="section-heading">
+        <span class="section-kicker">BILIM OLAMIGA SAYOHAT</span>
+        <h2>Tarixiy <em>bo‘limlar</em></h2>
+        <p>O‘zingizga qiziq bo‘lgan davrni tanlang.</p>
+      </div>
+      <div class="topic-grid" id="topicGrid">
+        <a class="topic-card" href="#maqolalar" data-search="qadimiy tarix misr rim yunon sivilizatsiya">
+          <img src="https://images.unsplash.com/photo-1539650116574-75c0c6d73f6e?auto=format&fit=crop&w=900&q=85" alt="Qadimgi tarixiy obidalar" loading="lazy">
+          <span class="topic-overlay"></span><span class="topic-content"><small>01 / DAVR</small><strong>Qadimiy tarix</strong><span class="topic-arrow">↗</span></span>
+        </a>
+        <a class="topic-card" href="#maqolalar" data-search="o‘rta asrlar temuriylar ipak yo‘li">
+          <img src="https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=900&q=85" alt="Tarixiy sharq meʼmorchiligi" loading="lazy">
+          <span class="topic-overlay"></span><span class="topic-content"><small>02 / DAVR</small><strong>O‘rta asrlar</strong><span class="topic-arrow">↗</span></span>
+        </a>
+        <a class="topic-card" href="#maqolalar" data-search="yangi davr tarix kashfiyotlar">
+          <img src="https://images.unsplash.com/photo-1598032895397-b9472444bf93?auto=format&fit=crop&w=900&q=85" alt="Tarixiy madrasa va gumbazlar" loading="lazy">
+          <span class="topic-overlay"></span><span class="topic-content"><small>03 / DAVR</small><strong>Yangi davr tarixi</strong><span class="topic-arrow">↗</span></span>
+        </a>
+        <a class="topic-card" href="#maqolalar" data-search="xx asr jahon urushi zamonaviy tarix">
+          <img src="https://images.unsplash.com/photo-1461360370896-922624d12aa1?auto=format&fit=crop&w=900&q=85" alt="Tarixiy hujjatlar va kitoblar" loading="lazy">
+          <span class="topic-overlay"></span><span class="topic-content"><small>04 / DAVR</small><strong>XX asr tarixi</strong><span class="topic-arrow">↗</span></span>
+        </a>
+        <a class="topic-card" href="#maqolalar" data-search="o‘zbekiston tarixi samarqand buxoro xiva">
+          <img src="https://images.unsplash.com/photo-1580746738099-5b0f7d7c1a2e?auto=format&fit=crop&w=900&q=85" alt="Markaziy Osiyo tarixiy obidasi" loading="lazy">
+          <span class="topic-overlay"></span><span class="topic-content"><small>05 / DAVR</small><strong>O‘zbekiston tarixi</strong><span class="topic-arrow">↗</span></span>
+        </a>
+      </div>
+      <p class="empty-state" id="emptyTopics" hidden>Bu so‘rov bo‘yicha mavzu topilmadi. Boshqa so‘z bilan qidiring.</p>
+    </section>
+
+    <section class="feature-band">
+      <div class="feature-copy">
+        <span class="section-kicker">BILIMINGIZNI SINAB KO‘RING</span>
+        <h2>Tarixni bilasizmi?</h2>
+        <p>Qisqa testlar yordamida bilimlaringizni tekshiring. Oson darajadan boshlang yoki o‘zingizni qiyin savollarda sinang.</p>
+        <a href="#testlar" class="button button-gold">Testga o‘tish <span>→</span></a>
+      </div>
+      <div class="feature-symbol" aria-hidden="true"><span>✦</span><strong>HISTORY</strong><small>LEARN FROM THE PAST</small><span>🏺</span></div>
+    </section>
+
+    <section class="section people-section" id="shaxslar">
+      <div class="section-heading">
+        <span class="section-kicker">BUYUK MEROS</span>
+        <h2>Mashhur <em>shaxslar</em></h2>
+        <p>Tarix yo‘lini o‘zgartirgan insonlar bilan tanishing.</p>
+      </div>
+      <div class="people-grid">
+        <article class="person-card"><div class="person-avatar">👑</div><div><h3>Amir Temur</h3><p>Buyuk sarkarda va davlat arbobi</p><span class="person-tag">1336–1405</span></div></article>
+        <article class="person-card"><div class="person-avatar">🔭</div><div><h3>Mirzo Ulug‘bek</h3><p>Olim, astronom va hukmdor</p><span class="person-tag">1394–1449</span></div></article>
+        <article class="person-card"><div class="person-avatar">⚔️</div><div><h3>Jaloliddin Manguberdi</h3><p>Vatan himoyachisi va sarkarda</p><span class="person-tag">1198–1231</span></div></article>
+        <article class="person-card"><div class="person-avatar">📚</div><div><h3>Alisher Navoiy</h3><p>Buyuk shoir va mutafakkir</p><span class="person-tag">1441–1501</span></div></article>
+      </div>
+    </section>
+
+<section class="section quiz-section" id="testlar">
+      <div class="quiz-intro">
+        <span class="section-kicker">INTERAKTIV TA’LIM</span>
+        <h2>Huquq <em>testlari</em></h2>
+        <p>Avval yuborgan 4 ta huquq test to‘plamingiz qo‘shildi. Testni tanlang, savollarga javob bering va yakunda natijangizni ko‘ring.</p>
+        <div class="law-test-picker" role="group" aria-label="Huquq testini tanlang">
+          <button class="law-test-btn selected" data-test="1">1-test <small>Huquq</small></button>
+          <button class="law-test-btn" data-test="2">2-test <small>Yangi variant</small></button>
+          <button class="law-test-btn" data-test="3">3-test <small>Aralash</small></button>
+          <button class="law-test-btn" data-test="4">4-test <small>Amaliy savollar</small></button>
+        </div>
+        <button id="startLawTest" class="button button-gold">Tanlangan testni boshlash →</button>
+        <p class="law-test-note">Eslatma: testlar ta’limiy maqsadda. Qonunchilikka oid ma’lumotlarni amaldagi rasmiy hujjatlar bilan tekshiring.</p>
+      </div>
+      <div class="quiz-card law-quiz-card" id="lawQuizCard">
+        <div class="quiz-top"><span id="lawLevelLabel">1-TEST — HUQUQ</span><span id="lawQuestionCount">1 / 30</span></div>
+        <div class="quiz-progress"><span id="lawProgressBar"></span></div>
+        <h3 id="lawQuestionText">Testni boshlash uchun chap tomondagi tugmani bosing.</h3>
+        <div class="answer-list" id="lawAnswerList"></div>
+        <div class="quiz-bottom">
+          <span id="lawQuizFeedback" aria-live="polite">Testni tanlab, boshlang.</span>
+          <div class="law-nav-buttons"><button id="lawPrev" class="difficulty-btn" disabled>← Oldingi</button><button id="lawNext" class="button button-gold" disabled>Keyingi →</button></div>
+        </div>
+        <div class="law-result" id="lawResult" hidden>
+          <strong id="lawScore"></strong>
+          <p id="lawResultMessage"></p>
+          <button id="lawRetry" class="button button-gold">Qayta ishlash ↻</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section articles-section" id="maqolalar">
+      <div class="section-heading heading-row">
+        <div><span class="section-kicker">MUTOLAA VA KASHFIYOT</span><h2>Tarixdan <em>lavhalar</em></h2></div>
+        <span class="article-count">TANLANG VA O‘RGANING</span>
+      </div>
+      <div class="article-grid" id="articleGrid">
+        <article class="article-card" data-search="amir temur davlati samarqand imperiya tarix">
+          <img src="https://images.unsplash.com/photo-1596422846543-75c6fc197f07?auto=format&fit=crop&w=900&q=85" alt="Samarqand meʼmorchiligi" loading="lazy">
+          <div class="article-body"><span class="article-category">O‘ZBEKISTON TARIXI</span><h3>Amir Temur va uning tarixiy merosi</h3><p>Markazlashgan davlat, diplomatiya va ilm-fan rivoji haqida qisqacha ma’lumot.</p><a href="#shaxslar" class="text-link">Batafsil <span>→</span></a></div>
+        </article>
+        <article class="article-card" data-search="samarqand registon meʼmorchilik tarixiy obidalar">
+          <img src="https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=900&q=85" alt="Sharq meʼmorchiligi" loading="lazy">
+          <div class="article-body"><span class="article-category">MADANIY MEROS</span><h3>Samarqand — tarix chorrahasi</h3><p>Buyuk Ipak yo‘lidagi muhim markaz va uning betakror me’moriy merosi.</p><a href="#mavzular" class="text-link">Mavzularni ko‘rish <span>→</span></a></div>
+        </article>
+        <article class="article-card" data-search="mirzo ulug‘bek rasadxona astronomiya ilm">
+          <img src="https://images.unsplash.com/photo-1519682337058-a94d519337bc?auto=format&fit=crop&w=900&q=85" alt="Ilmiy kitoblar" loading="lazy">
+          <div class="article-body"><span class="article-category">ILM-FAN TARIXI</span><h3>Mirzo Ulug‘bekning ilmiy merosi</h3><p>Ulug‘bek rasadxonasi va astronomiya taraqqiyotiga qo‘shilgan hissa.</p><a href="#shaxslar" class="text-link">Shaxslar bilan tanishish <span>→</span></a></div>
+        </article>
+      </div>
+      <p class="empty-state" id="emptyArticles" hidden>Bu so‘rov bo‘yicha maqola topilmadi.</p>
+    </section>
+
+    <section class="quote-section">
+      <span class="quote-mark">“</span>
+      <blockquote>Tarixni bilish — bugunni anglash va kelajakni qurish uchun muhimdir.</blockquote>
+      <span class="quote-line"></span><small>TARIX.UZ • BILIM VA MEROS</small>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="biz-haqimizda">
+    <a class="brand footer-brand" href="#bosh-sahifa"><span class="brand-mark" aria-hidden="true">🏛</span><span><strong>Tarix.uz</strong><small>O‘tmishdan saboq, kelajak uchun bilim</small></span></a>
+    <p>Tarixni o‘rganing, merosni asrang, kelajakni yarating.</p>
+    <div class="footer-links"><a href="#bosh-sahifa">Bosh sahifa</a><a href="#mavzular">Mavzular</a><a href="#testlar">Testlar</a><a href="#shaxslar">Shaxslar</a></div>
+    <small class="copyright">© <span id="year"></span> Tarix.uz. Ta’limiy loyiha.</small>
+  </footer>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
