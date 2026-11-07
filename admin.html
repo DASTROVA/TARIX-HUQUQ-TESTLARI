@@ -1,0 +1,212 @@
+
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090d19">
+  <title>Admin Panel | TARIX-HUQUQ</title>
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+  <div id="loginView" class="login-page">
+    <form id="loginForm" class="login-card">
+      <div class="brand-icon">TH</div>
+      <span class="eyebrow">TARIX • HUQUQ</span>
+      <h1>Admin panel</h1>
+      <p class="muted">Boshqaruv tizimiga xush kelibsiz.</p>
+      <label>Email</label>
+      <input id="email" type="email" placeholder="Admin email" required>
+      <label>Parol</label>
+      <input id="password" type="password" placeholder="Parol" required>
+      <button class="primary full" type="submit">Tizimga kirish →</button>
+      <p id="loginMessage" class="message"></p>
+    </form>
+  </div>
+
+  <div id="dashboardView" class="layout" hidden>
+    <aside class="sidebar">
+      <a class="brand" href="index.html">
+        <span class="brand-icon">TH</span>
+        <span>TARIX <small>ADMIN PANEL</small></span>
+      </a>
+
+      <p class="nav-label">BOSHQARUV</p>
+      <button class="nav-btn active" data-page="dashboard">▦ Dashboard</button>
+      <button class="nav-btn" data-page="articles">▤ Maqolalar</button>
+      <button class="nav-btn" data-page="questions">☷ Test savollari</button>
+      <button class="nav-btn" data-page="content">✎ Sayt matnlari</button>
+      <button class="nav-btn" data-page="analytics">◷ Statistika</button>
+
+      <div class="sidebar-bottom">
+        <a href="index.html" target="_blank">↗ Saytni ko‘rish</a>
+        <button id="logoutBtn" class="logout">⇥ Tizimdan chiqish</button>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div>
+          <span class="eyebrow">BOSHQARUV MARKAZI</span>
+          <h1 id="pageTitle">Dashboard</h1>
+        </div>
+        <div class="admin-user">
+          <span class="avatar">A</span>
+          <span id="adminEmail">Administrator</span>
+        </div>
+      </header>
+
+      <section class="page active" id="page-dashboard">
+        <div class="welcome">
+          <div>
+            <span class="eyebrow">XUSH KELIBSIZ</span>
+            <h2>Saytingiz boshqaruvi</h2>
+            <p>Barcha asosiy ko‘rsatkichlar bir joyda.</p>
+          </div>
+          <span class="welcome-symbol">✦</span>
+        </div>
+
+        <div class="stat-grid">
+          <div class="stat-card"><span>Jami tashriflar</span><strong id="totalViews">—</strong><small>Page views</small></div>
+          <div class="stat-card"><span>Bugungi tashriflar</span><strong id="todayViews">—</strong><small>Bugun</small></div>
+          <div class="stat-card"><span>Maqolalar</span><strong id="totalArticles">—</strong><small>Jami maqolalar</small></div>
+          <div class="stat-card"><span>Test savollari</span><strong id="totalQuestions">—</strong><small>Jami savollar</small></div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-heading">
+            <h2>So‘nggi tashriflar</h2>
+            <button class="secondary" data-go="analytics">Barchasini ko‘rish</button>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Sahifa</th><th>Manba</th><th>Sana</th></tr></thead>
+              <tbody id="recentVisits"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="page" id="page-articles">
+        <div class="panel">
+          <div class="panel-heading">
+            <div><h2>Maqolalarni boshqarish</h2><p class="muted">Maqola qo‘shing, tahrirlang yoki o‘chiring.</p></div>
+            <button class="primary" id="newArticleBtn">+ Maqola qo‘shish</button>
+          </div>
+
+          <form id="articleForm" class="editor" hidden>
+            <h3 id="articleFormTitle">Yangi maqola</h3>
+            <input type="hidden" id="articleId">
+            <label>Maqola sarlavhasi</label>
+            <input id="articleTitle" required placeholder="Sarlavha">
+            <label>Kategoriya</label>
+            <input id="articleCategory" placeholder="Masalan: O‘zbekiston tarixi">
+            <label>Qisqacha mazmun</label>
+            <textarea id="articleSummary" rows="2"></textarea>
+            <label>Maqola matni</label>
+            <textarea id="articleBody" rows="7" required></textarea>
+            <label>Rasm URL manzili</label>
+            <input id="articleImage" type="url" placeholder="https://...">
+            <label class="check"><input id="articlePublished" type="checkbox"> Saytda e’lon qilish</label>
+            <div class="actions">
+              <button class="primary" type="submit">Saqlash</button>
+              <button class="secondary" type="button" id="cancelArticle">Bekor qilish</button>
+            </div>
+          </form>
+
+          <div id="articlesList" class="item-list"></div>
+        </div>
+      </section>
+
+      <section class="page" id="page-questions">
+        <div class="panel">
+          <div class="panel-heading">
+            <div><h2>Test savollari</h2><p class="muted">To‘rtta test to‘plamini boshqaring.</p></div>
+            <button class="primary" id="newQuestionBtn">+ Savol qo‘shish</button>
+          </div>
+
+          <form id="questionForm" class="editor" hidden>
+            <h3 id="questionFormTitle">Yangi savol</h3>
+            <input type="hidden" id="questionId">
+            <label>Test raqami</label>
+            <select id="testNumber">
+              <option value="1">1-test</option>
+              <option value="2">2-test</option>
+              <option value="3">3-test</option>
+              <option value="4">4-test</option>
+            </select>
+            <label>Savol matni</label>
+            <textarea id="questionText" rows="3" required></textarea>
+            <label>A javob</label><input id="option0" required>
+            <label>B javob</label><input id="option1" required>
+            <label>C javob</label><input id="option2" required>
+            <label>D javob</label><input id="option3" required>
+            <label>To‘g‘ri javob</label>
+            <select id="correctIndex">
+              <option value="0">A</option>
+              <option value="1">B</option>
+              <option value="2">C</option>
+              <option value="3">D</option>
+            </select>
+            <label>Izoh (ixtiyoriy)</label>
+            <textarea id="explanation" rows="2"></textarea>
+            <div class="actions">
+              <button class="primary" type="submit">Saqlash</button>
+              <button class="secondary" type="button" id="cancelQuestion">Bekor qilish</button>
+            </div>
+          </form>
+
+          <div class="filter-row">
+            <label for="questionFilter">Testni tanlang:</label>
+            <select id="questionFilter">
+              <option value="all">Barcha testlar</option>
+              <option value="1">1-test</option>
+              <option value="2">2-test</option>
+              <option value="3">3-test</option>
+              <option value="4">4-test</option>
+            </select>
+          </div>
+          <div id="questionsList" class="item-list"></div>
+        </div>
+      </section>
+
+      <section class="page" id="page-content">
+        <div class="panel">
+          <h2>Sayt matnlarini boshqarish</h2>
+          <p class="muted">Kalit orqali matnni saqlang yoki yangilang.</p>
+          <form id="contentForm" class="editor">
+            <label>Matn kaliti</label>
+            <input id="contentKey" placeholder="Masalan: hero_title" required>
+            <label>Matn qiymati</label>
+            <textarea id="contentValue" rows="5" required></textarea>
+            <button class="primary" type="submit">Matnni saqlash</button>
+          </form>
+          <div id="contentList" class="item-list"></div>
+        </div>
+      </section>
+
+      <section class="page" id="page-analytics">
+        <div class="panel">
+          <div class="panel-heading">
+            <div><h2>Tashriflar statistikasi</h2><p class="muted">Saytga kelgan sahifa ko‘rishlari.</p></div>
+            <button class="secondary" id="refreshAnalytics">Yangilash ↻</button>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Sahifa</th><th>Manba</th><th>Havola kodi</th><th>Sana</th></tr></thead>
+              <tbody id="analyticsList"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <p id="dashboardMessage" class="message"></p>
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase-config.js"></script>
+  <script src="admin.js"></script>
+</body>
+  </html>
+          
