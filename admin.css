@@ -1,0 +1,251 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: #080d1b;
+  color: #fff;
+  font-family: Arial, sans-serif;
+}
+
+.header {
+  height: 75px;
+  padding: 0 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #10182b;
+  border-bottom: 1px solid #ffffff15;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo {
+  font-size: 23px;
+  font-weight: bold;
+  color: #a995ff;
+  text-decoration: none;
+}
+
+.logo span {
+  font-size: 12px;
+  color: white;
+  margin-left: 8px;
+}
+
+nav { display: flex; gap: 25px; }
+
+nav a {
+  color: #c2c9da;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+nav a:hover { color: #65dfe4; }
+
+.hero {
+  min-height: 520px;
+  padding: 80px 8%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: radial-gradient(circle at 80% 50%, #573b9c44, transparent 40%);
+}
+
+.hero-content { max-width: 600px; }
+
+.tag {
+  color: #8c83ff;
+  letter-spacing: 3px;
+  font-size: 11px;
+}
+
+.hero h1 {
+  font-size: clamp(38px, 6vw, 65px);
+  margin: 25px 0;
+  line-height: 1.15;
+}
+
+.hero h1 span {
+  background: linear-gradient(90deg,#a18bff,#5ae2e0);
+  color: transparent;
+  background-clip: text;
+}
+
+.hero p {
+  color: #a9b3c8;
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+
+.btn, .main-btn {
+  display: inline-block;
+  border: none;
+  padding: 14px 23px;
+  border-radius: 10px;
+  background: linear-gradient(100deg,#7556ff,#379ed9);
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.hero-icon {
+  font-size: 180px;
+  color: #a08cff;
+  text-shadow: 0 0 50px #795cff;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  margin: 30px 7%;
+  padding: 25px;
+  background: #121d32;
+  border: 1px solid #ffffff15;
+  border-radius: 18px;
+  text-align: center;
+}
+
+.stats h2 { color: #a995ff; font-size: 30px; }
+.stats p { color: #9daac0; margin-top: 8px; }
+
+.subjects {
+  padding: 80px 7%;
+  text-align: center;
+}
+
+.subjects h2, .about h2 { font-size: 35px; }
+.subtitle { color: #9daac0; margin: 12px 0 35px; }
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 22px;
+  text-align: left;
+}
+
+.card {
+  padding: 30px;
+  border-radius: 18px;
+  background: #142039;
+  border: 1px solid #ffffff20;
+}
+
+.card-icon { font-size: 45px; color: #a995ff; }
+.card h3 { margin: 20px 0 10px; font-size: 25px; }
+.card p { color: #aab5c9; line-height: 1.7; margin-bottom: 25px; }
+
+.card button {
+  width: 100%;
+  padding: 13px;
+  background: #7057e9;
+  color: white;
+  border: none;
+  border-radius: 9px;
+  cursor: pointer;
+}
+
+.law button { background: #159eaa; }
+
+.about {
+  padding: 70px 8%;
+  text-align: center;
+  background: #111b30;
+}
+
+.about p {
+  color: #aab5c9;
+  margin: 20px auto 0;
+  max-width: 650px;
+  line-height: 1.8;
+}
+
+footer {
+  text-align: center;
+  padding: 30px;
+  color: #8995ad;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+  background: #000c;
+  place-items: center;
+  padding: 15px;
+}
+
+.modal.show { display: grid; }
+
+.modal-box {
+  position: relative;
+  width: min(500px,100%);
+  padding: 30px;
+  border-radius: 18px;
+  background: #142039;
+  border: 1px solid #ffffff25;
+}
+
+.modal-box h2 { margin-bottom: 20px; }
+
+.close {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  border: none;
+  background: none;
+  color: white;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.modal input {
+  width: 100%;
+  padding: 13px;
+  margin-bottom: 15px;
+  background: #080d1b;
+  color: white;
+  border: 1px solid #ffffff30;
+  border-radius: 8px;
+}
+
+.modal .main-btn { width: 100%; margin-top: 15px; }
+
+#answers { display: grid; gap: 10px; }
+
+.answer {
+  padding: 13px;
+  background: #ffffff0d;
+  border: 1px solid #ffffff25;
+  border-radius: 9px;
+  color: white;
+  text-align: left;
+  cursor: pointer;
+}
+
+.answer.correct { background: #146b4b; }
+.answer.wrong { background: #873a4a; }
+
+#question { line-height: 1.5; }
+
+@media(max-width:700px) {
+  .header { padding: 0 5%; }
+  nav { gap: 10px; }
+  nav a { font-size: 10px; }
+  .hero { padding: 65px 7%; }
+  .hero-icon { display: none; }
+  .cards { grid-template-columns: 1fr; }
+  .stats { margin: 20px 5%; padding: 20px 8px; }
+  .stats h2 { font-size: 23px; }
+  .stats p { font-size: 11px; }
+  .subjects h2,.about h2 { font-size: 28px; }
+  }
+  
